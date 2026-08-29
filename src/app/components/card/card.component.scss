@@ -1,0 +1,25 @@
+.card {
+  width: 100%;
+  min-width: 352px;
+  padding: 25px 32px;
+  background-color: #fff;
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h3 {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-title);
+    }
+  }
+  .header-amount {
+    font-size: 36px;
+    font-weight: 400px;
+    color: var(--text-title);
+    line-height: 100%;
+    span {
+      font-weight: 500;
+    }
+  }
+}
