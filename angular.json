@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bradesco-lab": {
+    "dt-money": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/bradesco-lab",
+            "outputPath": "dist/dt-money",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "bradesco-lab:build:production"
+              "buildTarget": "dt-money:build:production"
             },
             "development": {
-              "buildTarget": "bradesco-lab:build:development"
+              "buildTarget": "dt-money:build:development"
             }
           },
           "defaultConfiguration": "development"
