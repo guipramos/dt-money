@@ -4,6 +4,7 @@
   --color-roxo: #6933ff;
   --color-roxo-dark: #5429cc;
   --text-title: #363f5f;
+  --background: #f0f2f5;
 
   /* Fonts */
   --font-poppins: "Poppins", sans-serif;
@@ -26,6 +27,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
+  background-color: var(--background);
 }
 
 img,

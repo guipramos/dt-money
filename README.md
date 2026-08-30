@@ -1,59 +1,101 @@
 # DT Money
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.27.
+Este repositório é um **projeto de estudo em Angular**. O layout original é da [Rocketseat](https://www.rocketseat.com.br/); aqui ele é recriado na tela para praticar o framework.
 
-## Development server
+DT Money é um dashboard de controle financeiro pessoal. Na interface você acompanha **entradas**, **saídas** e o **saldo total**. O código usa componentes standalone, SCSS e TypeScript, gerados com o [Angular CLI](https://github.com/angular/angular-cli) 20.3.
 
-To start a local development server, run:
+## O que já existe na tela
+
+- Cabeçalho com logo e botão **Nova transação**
+- Três cards de resumo: Entradas, Saídas e Total
+- Valores em Real (R$), no layout em container
+- Componentes separados: `header`, `botao` e `card`
+
+## Pré-requisitos
+
+- [Node.js](https://nodejs.org/) 20 ou superior
+- npm (instalado junto com o Node)
+
+Na pasta `dt-money`, instale as dependências:
+
+```bash
+npm install
+```
+
+## Servidor de desenvolvimento
+
+Sobe o app localmente. Qualquer alteração nos arquivos de origem recarrega o navegador sozinha:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abra `http://localhost:4200/`. O comando `npm start` faz a mesma coisa.
 
-## Code scaffolding
+## Estrutura do código
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Os arquivos da interface ficam em `src/app/`:
+
+| Caminho | Função |
+| --- | --- |
+| `app.component` | Tela principal: junta o header e a lista de cards |
+| `components/header` | Barra superior com logo e botão |
+| `components/botao` | Botão **Nova transação** |
+| `components/card` | Card de valor (entrada, saída ou total) |
+| `models/card.model.ts` | Tipo `Card` e variante visual (`default` ou `total`) |
+
+Imagens e logo estão em `src/assets` e `public/assets`.
+
+## Gerar código (scaffolding)
+
+O Angular CLI cria arquivos novos a partir de um comando. Para um componente:
 
 ```bash
-ng generate component component-name
+ng generate component nome-do-componente
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Outros geradores comuns: `directive`, `pipe`, `service`. Lista completa:
 
 ```bash
 ng generate --help
 ```
 
-## Building
+## Build de produção
 
-To build the project run:
+Compila o projeto e grava os artefatos em `dist/dt-money`. O build de produção minifica e otimiza o bundle:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Para recompilar a cada mudança, sem otimização de produção:
 
-## Running unit tests
+```bash
+npm run watch
+```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Testes unitários
+
+Roda os testes com [Karma](https://karma-runner.github.io) e Jasmine:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+Os arquivos `*.spec.ts` ficam ao lado de cada componente. O Karma abre o Chrome e reexecuta os testes quando você salva um arquivo.
 
-For end-to-end (e2e) testing, run:
+## Testes end-to-end
+
+O Angular CLI **não** inclui um framework de e2e por padrão. Se precisar de testes de fluxo no navegador, escolha uma ferramenta (Cypress, Playwright ou similar) e configure à parte.
+
+O comando abaixo só funciona depois dessa configuração:
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Referências
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Angular CLI — visão geral e comandos](https://angular.dev/tools/cli)
+- [Documentação do Angular](https://angular.dev)
+- [Rocketseat](https://www.rocketseat.com.br/)

@@ -1,7 +1,9 @@
-<article class="card">
+<article class="card" [class.card--total]="variant === 'total'">
   <header class="card-header">
-    <h3>Entradas</h3>
-    <img [src]="iconUp" alt="Icone de entrada" aria-hidden="true" />
+    <h3>{{ titlecard }}</h3>
+    <img [src]="iconUrl" alt="" aria-hidden="true" />
   </header>
-  <div class="header-amount">R$ <span>17.400.00</span></div>
+  <div class="header-amount">
+    R$ <span>{{ amount }}</span>
+  </div>
 </article>

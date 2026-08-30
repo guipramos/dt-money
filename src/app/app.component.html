@@ -2,7 +2,14 @@
 <main class="main">
   <div class="container">
     <div class="cards">
-      <app-card />
+      @for (card of cards; track card.id) {
+        <app-card
+          [titlecard]="card.title"
+          [iconUrl]="card.iconUrl"
+          [amount]="card.amount"
+          [variant]="card.variant"
+        />
+      }
     </div>
   </div>
 </main>
