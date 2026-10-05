@@ -5,6 +5,17 @@
   --color-roxo-dark: #5429cc;
   --text-title: #363f5f;
   --background: #f0f2f5;
+  --background-green: #33cc95;
+  --overlay: rgba(0, 0, 0, 0.5);
+  --text-red: #e52e4d;
+
+  // Text
+  --text-gray: #969cb2;
+  --text-gray-light: #a8a8b3;
+  --text-gray-light-200: #e7e9ee;
+  --text-gray-light-250: #d7d7d7;
+
+  --background-modal: #f0f2f5;
 
   /* Fonts */
   --font-poppins: "Poppins", sans-serif;
@@ -28,6 +39,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
   background-color: var(--background);
+  font-size: 16px;
 }
 
 img,
@@ -70,4 +82,11 @@ $breakpoint-desktop: 1024px;
   @media (min-width: $breakpoint-desktop) {
     max-width: 1136px;
   }
+}
+
+.is-entrada {
+  color: var(--background-green);
+}
+.is-saida {
+  color: var(--text-red);
 }

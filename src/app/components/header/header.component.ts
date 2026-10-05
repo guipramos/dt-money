@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { BotaoComponent } from '../botao/botao.component';
 
 @Component({
@@ -10,4 +10,6 @@ import { BotaoComponent } from '../botao/botao.component';
 })
 export class HeaderComponent {
   logoUrl: string = 'assets/Logo.svg';
+
+  @Output() novaTransacao = new EventEmitter<void>();
 }

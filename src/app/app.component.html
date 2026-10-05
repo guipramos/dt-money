@@ -1,4 +1,4 @@
-<app-header />
+<app-header (novaTransacao)="abrirModal()" />
 <main class="main">
   <div class="container">
     <div class="cards">
@@ -11,6 +11,12 @@
         />
       }
     </div>
+    <app-table [rows]="tables" />
   </div>
 </main>
+<app-modal
+  [aberto]="modalAberto"
+  (cadastrar)="adicionarTransacao($event)"
+  (fechar)="fecharModal()"
+/>
 <router-outlet />

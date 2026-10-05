@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header-flex">
       <img [src]="logoUrl" alt="Logo principal" />
-      <app-botao />
+      <app-botao (novaTransacao)="novaTransacao.emit()" />
     </div>
   </div>
 </header>

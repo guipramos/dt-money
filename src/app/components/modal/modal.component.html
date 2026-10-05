@@ -1,0 +1,64 @@
+@if (aberto) {
+  <div
+    class="overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+  >
+    <div class="modal">
+      <button
+        class="modal__close"
+        type="button"
+        aria-label="Fechar"
+        (click)="fecharModal()"
+      >
+        ×
+      </button>
+
+      <h2 id="modal-title" class="modal__title">Cadastrar transação</h2>
+
+      <form [formGroup]="Form" (ngSubmit)="onSubmit()" class="modal__form">
+        <input class="input" formControlName="nome" placeholder="Nome" />
+        <input
+          class="input"
+          formControlName="preco"
+          placeholder="Preço"
+          (input)="formatarPreco($event)"
+        />
+
+        <div class="modal__types">
+          <button
+            type="button"
+            [class.is-entrada]="Form.value.tipo === 'entrada'"
+            (click)="Form.patchValue({ tipo: 'entrada' })"
+          >
+            <img src="assets/images/entradas.svg" alt="" />
+            Entrada
+          </button>
+          <button
+            type="button"
+            [class.is-saida]="Form.value.tipo === 'saida'"
+            (click)="Form.patchValue({ tipo: 'saida' })"
+          >
+            <img src="assets/images/saidas.svg" alt="" />
+            Saída
+          </button>
+        </div>
+
+        <input
+          class="input"
+          formControlName="categoria"
+          placeholder="Categoria"
+        />
+
+        <button
+          type="submit"
+          class="modal__form-register"
+          [disabled]="Form.invalid"
+        >
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </div>
+}

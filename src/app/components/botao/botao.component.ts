@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-botao',
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './botao.component.scss',
 })
 export class BotaoComponent {
+  @Output() novaTransacao = new EventEmitter<void>();
 
+  abrirModal() {
+    this.novaTransacao.emit();
+  }
 }

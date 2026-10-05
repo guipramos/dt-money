@@ -1,0 +1,41 @@
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  margin-top: 64px;
+  tr {
+    padding: 0 32px 8px;
+    color: var(--text-gray);
+    font-weight: 400;
+    text-align: left;
+    background: transparent;
+    margin-bottom: 8px;
+  }
+  td {
+    padding: 20px 32px;
+    background: #fff;
+    color: var(--text-title);
+    &:first-child {
+      border-radius: 8px 0 0 8px;
+    }
+    &:last-child {
+      border-radius: 0 8px 8px 0;
+    }
+  }
+  .preco {
+    color: var(--background-green);
+  }
+  thead {
+    tr {
+      width: 100%;
+      th {
+        color: var(--text-gray);
+        font-weight: 400;
+        padding: 20px 32px;
+      }
+    }
+  }
+  .is-saida {
+    color: var(--text-red);
+  }
+}
