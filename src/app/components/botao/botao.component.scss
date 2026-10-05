@@ -1,18 +1,30 @@
+:host {
+  display: block;
+  flex-shrink: 0;
+}
+
 .btn {
-  width: 100%;
-  min-width: 195px;
+  width: auto;
+  min-width: 0;
   background-color: var(--color-roxo);
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: #fff;
-  padding: 12px;
+  padding: 10px 12px;
+  white-space: nowrap;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: filter 0.3s ease;
+
+  @media (min-width: 480px) {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
   &:hover {
     filter: brightness(90%);
   }

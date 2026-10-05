@@ -1,9 +1,21 @@
+:host {
+  display: block;
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+}
+
 .card {
   width: 100%;
-  min-width: 352px;
-  padding: 25px 32px;
+  min-width: 0;
+  height: 100%;
+  padding: 20px 24px;
   background-color: #fff;
   border-radius: 7px;
+
+  @media (min-width: 1024px) {
+    padding: 25px 32px;
+  }
   &-header {
     display: flex;
     align-items: center;
@@ -15,10 +27,20 @@
     }
   }
   .header-amount {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 400;
     color: var(--text-title);
-    line-height: 100%;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+
+    @media (min-width: 768px) and (max-width: 1099px) {
+      font-size: 22px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 36px;
+    }
+
     span {
       font-weight: 500;
     }

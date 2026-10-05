@@ -10,16 +10,20 @@
   <tbody>
     @for (row of rows; track row.id) {
       <tr>
-        <td>{{ row.title }}</td>
-        <td class="preco" [class.is-saida]="row.tipo === 'saida'">
+        <td data-label="Título">{{ row.title }}</td>
+        <td
+          data-label="Preço"
+          class="preco"
+          [class.is-saida]="row.tipo === 'saida'"
+        >
           {{
             row.tipo === "saida"
               ? "- " + formatCurrency(row.price)
               : formatCurrency(row.price)
           }}
         </td>
-        <td>{{ row.categorie }}</td>
-        <td>{{ formatDate(row.dateCurrent) }}</td>
+        <td data-label="Categoria">{{ row.categorie }}</td>
+        <td data-label="Data">{{ formatDate(row.dateCurrent) }}</td>
       </tr>
     }
   </tbody>
